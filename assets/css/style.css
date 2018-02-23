@@ -1,0 +1,41 @@
+body {
+    background-image: url("../images/wallpaper.wiki-Chemistry-HD-Wallpaper-PIC-WPC006935.png");
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    color: #d2f5f8;
+    font-family: ChunkFive;
+    src: url('../fonts/Chunk.ttf');
+}
+
+h1 {
+    color: #fffd6f;
+    font-family: BPmolecules;
+    src: url('../fonts/bpmolecules.regular.ttf');
+    font-size: 50px;
+}
+
+.triviaBox {
+    padding: 20px;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    background-color: #000;
+    height: 1200%;
+    width: 72%;
+    margin-left:12%;
+    margin-right:18%;
+    margin-bottom: 10%;
+}
+
+.startButton, .submitButton {
+    background-color: #d2f5f8;
+    color: #000;
+    height: 1400%;
+    width: 18%;
+    border: #fffd6f solid 1px;
+    cursor: pointer;
+    margin-bottom: 10%;
+    font-family: "Press Start 2P";
+    src: url('../fonts/PressStart2P.ttf');
+}

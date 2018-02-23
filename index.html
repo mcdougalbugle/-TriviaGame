@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="triviaBox">
+    <center>
+    <h1>Totally Not Trivial Chemistry Trivia!</h1>
+    <br>
+    <div class="startButton"><h3>Start</h3></div>
+    <div class="questionList">
+    <p id="timer">Time Remaining: 60</p>
+    <br>
+    <form class="q">
+  <h2>1. Which of the follwing is not a pure substance?</h2>
+  <input class= "incorrectAnswer1" name="test" type="radio" value="inc" /> A) Copper Sulfate Crystal
+  <input class= "incorrectAnswer1" name="test" type="radio" value="ans"/> B) NaCl
+  <input class= "incorrectAnswer1" name="test" type="radio" value="inc" /> C) Nitrogen Gas
+  <input class= "correctAnswer1" name="test" type="radio" value="inc" /> D) Air
+  <input class= "incorrectAnswer1" name="test" type="radio" value="inc" /> E) Iron
+</form>
+<br>
+<form class="q">
+  <h2>2. Which of the following are chemical reaction(s)?</h2>
+  <input class= "incorrectAnswer2" name="test" type="radio" value="inc" /> A) Sublimation
+  <input class= "incorrectAnswer2" name="test" type="radio" value="ans"/> B) Reduction
+  <input class= "incorrectAnswer2"name="test" type="radio" value="inc" /> C) Oxidation
+  <input class= "correctAnswer2" name="test" type="radio" value="inc" /> D) B & C
+  <input class= "incorrectAnswer2" name="test" type="radio" value="inc" /> E) None of the Above
+</form>
+<br>
+<form class="q">
+  <h2>3. How many neutrons does a Carbon-14 isotope have?</h2>
+  <input class= "incorrectAnswer3" name="test" type="radio" value="inc" /> A) 6
+  <input class= "correctAnswer3" name="test" type="radio" value="ans"/> B) 8
+  <input class= "incorrectAnswer3" name="test" type="radio" value="inc" /> C) 4
+  <input class= "incorrectAnswer3" name="test" type="radio" value="inc" /> D) 14
+  <input class= "incorrectAnswer3" name="test" type="radio" value="inc" /> E) 10
+</form>
+<br>
+<form class="q">
+  <h2>4. Electrons have a ________ charge.</h2>
+  <input class= "incorrectAnswer4" name="test" type="radio" value="inc" /> A) Positive
+  <input class= "correctAnswer4" name="test" type="radio" value="ans"/> B) Negative
+  <input class= "incorrectAnswer4" name="test" type="radio" value="inc" /> C) Neutral
+</form>
+<br>
+<form class="q">
+  <h2>5. Which molecules have a tetrahedral shape?</h2>
+  <input class= "incorrectAnswer5" name="test" type="radio" value="inc" /> A) CCl4
+  <input class= "incorrectAnswer5" name="test" type="radio" value="ans"/> B) XeF4
+  <input class= "incorrectAnswer5" name="test" type="radio" value="inc" /> C) CHCl3
+  <input class= "incorrectAnswer5" name="test" type="radio" value="inc" /> D) B & C
+  <input class= "correctAnswer5" name="test" type="radio" value="inc" /> E) A & C
+</form>
+<br>
+<form class="q">
+  <h2>6. Solutions are __________ mixtures.</h2>
+  <input class= "correctAnswer6" name="test" type="radio" value="inc" /> A) Homogenous
+  <input class= "incorrectAnswer6" name="test" type="radio" value="ans"/> B) Heterogenous
+</form>
+<br>
+<form class="q">
+  <h2>7. Convert 115 °F to °C.</h2>
+  <input class= "correctAnswer7" name="test" type="radio" value="inc" /> A) 46 °C
+  <input class= "incorrectAnswer7" name="test" type="radio" value="ans"/> B) 37 °C
+  <input class= "incorrectAnswer7" name="test" type="radio" value="inc" /> C) 22 °C
+  <input class= "incorrectAnswer7" name="test" type="radio" value="ans"/> D) 180 °C
+  <input class= "incorrectAnswer7" name="test" type="radio" value="ans"/> D) 0 °C
+</form>
+<br>
+<form class="q">
+  <h2>8. Which of the following have 3 significant figures?</h2>
+  <input class= "incorrectAnswer8" name="test" type="radio" value="inc" /> A) 340
+  <input class= "incorrectAnswer8" name="test" type="radio" value="ans"/> B) 0.00100450
+  <input class= "correctAnswer8" name="test" type="radio" value="inc" /> C) 0.00000440
+  <input class= "incorrectAnswer8" name="test" type="radio" value="ans"/> D) 340.0
+  <input class= "incorrectAnswer8" name="test" type="radio" value="ans"/> D) 29 x 10^3
+</form>
+<br>
+<br>
+<div class="submitButton"><h3>Submit</h3></div>
+
+
+</div>
+
+<div class="finishPage">
+    <h2>All Done!</h2>
+    <br>
+    <h4 id="correctStat"></h4>
+    <h4 id="incorrectStat"></h4>
+    <h4 id="unansweredStat"></h4>
+
+</div>
+
+</center>
+
+
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous">
+  </script>
+<script>
+$(function () {
+$('input[name="test"]').on('click', function() {
+    if ($(this).val() == 'ans') {
+        $('.exp').show();
+        $('.red').hide();
+    } else {
+        $('.exp').hide();
+        $('.red').show();
+    }
+})
+});
+
+var ans1 = 0
+var ans2 = 0
+var ans3 = 0
+var ans4 = 0
+var ans5 = 0
+var ans6 = 0
+var ans7 = 0
+var ans8 = 0
+
+var wro1 = 0
+var wro2 = 0
+var wro3 = 0
+var wro4 = 0
+var wro5 = 0
+var wro6 = 0
+var wro7 = 0
+var wro8 = 0
+
+$(".correctAnswer1").click(function() {
+   $(this).data('clicked', true);
+   ans1 = 1
+});
+
+$(".incorrectAnswer1").click(function() {
+   $(this).data('clicked', true);
+   ans1 = 0
+   wro1 = 1
+});
+
+$(".correctAnswer2").click(function() {
+   $(this).data('clicked', true);
+   ans2 = 1
+});
+
+$(".incorrectAnswer2").click(function() {
+   $(this).data('clicked', true);
+   ans1 = 0
+   wro2 = 1
+});
+
+$(".correctAnswer3").click(function() {
+   $(this).data('clicked', true);
+   ans3 = 1
+});
+
+$(".incorrectAnswer3").click(function() {
+   $(this).data('clicked', true);
+   ans1 = 0
+   wro3 = 1
+});
+
+$(".correctAnswer4").click(function() {
+   $(this).data('clicked', true);
+   ans4 = 1
+});
+
+$(".incorrectAnswer4").click(function() {
+   $(this).data('clicked', true);
+   ans1 = 0
+   wro4 = 1
+});
+
+$(".correctAnswer5").click(function() {
+   $(this).data('clicked', true);
+   ans5 = 1
+});
+
+$(".incorrectAnswer5").click(function() {
+   $(this).data('clicked', true);
+   ans1 = 0
+   wro5 = 1
+});
+
+$(".correctAnswer6").click(function() {
+   $(this).data('clicked', true);
+   ans6 = 1
+});
+
+$(".incorrectAnswer6").click(function() {
+   $(this).data('clicked', true);
+   ans1 = 0
+   wro6 = 1
+});
+
+$(".correctAnswer7").click(function() {
+   $(this).data('clicked', true);
+   ans7 = 1
+});
+
+$(".incorrectAnswer7").click(function() {
+   $(this).data('clicked', true);
+   ans1 = 0
+   wro7 = 1
+});
+
+$(".correctAnswer8").click(function() {
+   $(this).data('clicked', true);
+   ans8 = 1
+});
+
+$(".incorrectAnswer8").click(function() {
+   $(this).data('clicked', true);
+   ans1 = 0
+   wro8 = 1
+});
+
+$('.questionList').hide();
+$('.finishPage').hide();
+
+$(".submitButton").click(function() {
+    $('.finishPage').show();
+    $('.questionList').hide();
+    $("#correctStat").html("Correct Answers: " + (ans1 + ans2 + ans3 + ans4 + ans5 + ans6 + ans7 + ans8));
+    $("#incorrectStat").html("Incorrect Answers: " + (wro1 + wro2 + wro3 + wro4 + wro5 + wro6 + wro7 + wro8));
+    $("#unansweredStat").html("Unanswered: " + (8 - (ans1 + ans2 + ans3 + ans4 + ans5 + ans6 + ans7 + ans8) - (wro1 + wro2 + wro3 + wro4 + wro5 + wro6 + wro7 + wro8)));
+});
+
+$(".startButton").click(function() {
+   $('.questionList').show();
+   $('.startButton').hide();
+   var n = 60;
+setTimeout(countDown,1000);
+
+function countDown(){
+   n--;
+   if(n > 0){
+      setTimeout(countDown,1000);
+   }
+   $("#timer").html("Time Remaining: " + n);
+   if(n===0){
+    $('.finishPage').show();
+    $('.questionList').hide();
+    $("#correctStat").html("Correct Answers: " + (ans1 + ans2 + ans3 + ans4 + ans5 + ans6 + ans7 + ans8));
+    $("#incorrectStat").html("Incorrect Answers: " + (8 - (wro1 + wro2 + wro3 + wro4 + wro5 + wro6 + wro7 + wro8)));
+    $("#unansweredStat").html("Unanswered: " + (8 - (ans1 + ans2 + ans3 + ans4 + ans5 + ans6 + ans7 + ans8) - (wro1 + wro2 + wro3 + wro4 + wro5 + wro6 + wro7 + wro8)));
+   }
+   } 
+
+});
+
+</script>
+
+</body>
+
+</html>
